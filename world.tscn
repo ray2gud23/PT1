@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cuklnmsgdfu7v"]
+
+[ext_resource type="PackedScene" uid="uid://cybyonw4xc7hd" path="res://enemy.tscn" id="1_x0cmf"]
+[ext_resource type="PackedScene" uid="uid://wi3ty3k1fh1e" path="res://player.tscn" id="2_ug0ke"]
+[ext_resource type="AudioStream" uid="uid://dijlc3v6i0or3" path="res://bg_music.mp3" id="3_2sqvu"]
+[ext_resource type="AudioStream" uid="uid://25h8317w24nw" path="res://enemy_hit.mp3" id="4_foxs0"]
+
+[node name="world" type="Node2D"]
+
+[node name="enemy" parent="." instance=ExtResource("1_x0cmf")]
+
+[node name="Player" parent="." instance=ExtResource("2_ug0ke")]
+speed = 400
+
+[node name="BGmusic" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_2sqvu")
+autoplay = true
+
+[node name="EnemyHit" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_foxs0")
